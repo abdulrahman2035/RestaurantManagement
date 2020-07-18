@@ -1,0 +1,54 @@
+﻿@model WebAPP.Models.Reservation
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <!-- 2 empty sections in the left -->
+            </div>
+            <div class="col-sm-6" style="padding-top:50px">
+                <h4>Registration</h4>
+                <hr />
+                <form asp-action="Reservation">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group">
+                        <label asp-for="GuestNumber" class="control-label"></label>
+                        <input asp-for="GuestNumber" class="form-control" />
+                        <span asp-validation-for="GuestNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ReservationDate" class="control-label"></label>
+                        <input asp-for="ReservationDate" type="date" class="form-control" />
+                        <span asp-validation-for="ReservationDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ManuType" class="control-label"></label>
+                        <select id="manu" name="manu" class="form-control">
+                            <option value="Breakfast">Breakfast</option>
+                            <option value="Dinner">Dinner</option>
+                            <option value="Lunch">Lunch</option>
+                            <option value="Drinks">Drinks</option>
+                        </select>
+                        @*<input asp-for="ManuType" class="form-control" />*@
+                        <span asp-validation-for="ManuType" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Notes" class="control-label"></label>
+                        <input asp-for="Notes"  class="form-control" />
+                        <span asp-validation-for="Notes" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-sm-3">
+                <!-- 2 empty sections in the right -->
+            </div>
+        </div>
+    </div>
